@@ -51,6 +51,11 @@ const articleMaker = function(artObj) {
     authorDiv.appendChild(spanName);
     imageDiv.appendChild(authorImg);
 
+    // addEventListener
+    cardDiv.addEventListener('click', event => {
+        console.log(headlineDiv.textContent);
+    })
+
     // return main div
     return cardDiv;
 }
