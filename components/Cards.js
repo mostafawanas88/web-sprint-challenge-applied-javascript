@@ -55,8 +55,13 @@ const articleMaker = function(artObj) {
     return cardDiv;
 }
 
+// calling axios api and fetching data 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then((response) => {
+    // response is an object wihin an object that contains array of objects
+    // loop throught the articles object and then grab each element(key), which is an array
+    // loop over each element (key) using forEach
+    // create newArticle using article maker and append to container
     for (var key in response.data.articles) {
         response.data.articles[key].forEach((articleObj) => {
             const newArticle = articleMaker(articleObj);
